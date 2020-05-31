@@ -1,62 +1,61 @@
 import Head from 'next/head'
+import { RiGithubLine, RiLinkedinLine } from "react-icons/ri";
 
-export default function Home() {
-  return (
+const app = () => {
+  return(
+  <>
     <div className="container">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Mariano Murad</title>
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Mariano Murad
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Personal <code>portfolio</code>
         </p>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="experience" className="card">
+            <h3>Experience &rarr;</h3>
+            <p>Previous Jobs, Current, and Future Plans.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="about" className="card">
+            <h3>About &rarr;</h3>
+            <p>Get an insight on my life & interests.</p>
           </a>
 
           <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
+              href="technologies"
+              className="card"
           >
-            <h3>Deploy &rarr;</h3>
+            <h3>Technologies &rarr;</h3>
+            <p>I this what you are looking for?</p>
+          </a>
+
+          <a
+              href="contact"
+              className="card"
+          >
+            <h3>Contact &rarr;</h3>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Let's schedule a meeting.
             </p>
           </a>
         </div>
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
+        <div> Mariano Murad ® </div>
+        <div className="icons">
+          <a href="www.github.com/marianomurad" target="_blank" rel="noopener noreferrer"> <RiGithubLine/> </a>
+          <a href="www.linkedin.com/marianomurad" target="_blank" rel="noopener noreferrer"> <RiLinkedinLine/> </a>
+        </div>
       </footer>
 
       <style jsx>{`
@@ -67,6 +66,8 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          background: black;
+          color: white;
         }
 
         main {
@@ -83,15 +84,20 @@ export default function Home() {
           height: 100px;
           border-top: 1px solid #eaeaea;
           display: flex;
-          justify-content: center;
+          flex-direction: row;
+          justify-content: space-around;
           align-items: center;
+          font-size: 20px;
+        }
+        footer .icons {
+          margin: 15px;
         }
 
         footer img {
           margin-left: 0.5rem;
         }
 
-        footer a {
+        footer {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -131,6 +137,7 @@ export default function Home() {
 
         code {
           background: #fafafa;
+          color: black;
           border-radius: 5px;
           padding: 0.75rem;
           font-size: 1.1rem;
@@ -163,8 +170,8 @@ export default function Home() {
         .card:hover,
         .card:focus,
         .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+          color: #777777;
+          border-color: #e3e3e3;
         }
 
         .card h3 {
@@ -205,5 +212,6 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  </>)
 }
+export default app;
