@@ -1,6 +1,6 @@
 import {RiGithubLine, RiHome2Line, RiLinkedinLine, RiWhatsappLine, RiRecordMailLine} from "react-icons/ri";
 import Link from "next/link";
-import {FooterLinks} from "../utils";
+import {FooterLinks} from "../utils/utils";
 const LayoutComponent = ({children}) => {
     return (
         <div className="container">
@@ -16,7 +16,6 @@ const LayoutComponent = ({children}) => {
                     <a href={FooterLinks.github} style={{fontSize: 30, color: 'black', margin: 10}}><RiGithubLine/></a>
                     <a href={FooterLinks.linkedin} style={{fontSize: 30, color: 'black', margin: 10}}><RiLinkedinLine/></a>
                     <a href={FooterLinks.whatsapp} style={{fontSize: 30, color: 'black', margin: 10}}><RiWhatsappLine/></a>
-                    <a href={FooterLinks.email} style={{fontSize: 30, color: 'black', margin: 10}}> <RiRecordMailLine/></a>
                 </div>
             </footer>
             <style jsx>{`

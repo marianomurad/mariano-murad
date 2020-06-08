@@ -35,7 +35,7 @@ const app = () => {
                 className="card"
             >
               <h3>Technologies &rarr;</h3>
-              <p>I this what you are looking for?</p>
+              <p>Is this what you are looking for?</p>
             </a>
 
             <a

@@ -9,6 +9,13 @@ const ExperiencePage = () => {
             </Head>
             <main>
             <h1> Experience</h1>
+                <ul>
+                    {expList.map(item =>
+                    <li>
+                        {item.value}
+                    </li>
+                    )}
+                </ul>
             </main>
         </div>
     );
