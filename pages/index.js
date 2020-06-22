@@ -9,7 +9,7 @@ const app = () => {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      <main style={{backgroundImage: `url('./undraw_resume_1hqp.svg')`,backgroundRepeat: 'no-repeat', backgroundPosition: '100% 100%', backgroundSize: '1000px 500px'}}>
+      <main style={{height: '80vh', width: '100%'}}>
         <h1 className="title">
           Mariano Murad
         </h1>

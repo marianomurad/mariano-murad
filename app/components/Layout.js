@@ -1,4 +1,4 @@
-import {RiGithubLine, RiHome2Line, RiLinkedinLine, RiWhatsappLine, RiRecordMailLine} from "react-icons/ri";
+import { RiGithubLine, RiHome2Line, RiLinkedinLine, RiWhatsappLine } from "react-icons/ri";
 import Link from "next/link";
 import {FooterLinks} from "../utils/utils";
 const LayoutComponent = ({children}) => {
