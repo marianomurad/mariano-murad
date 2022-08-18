@@ -4,11 +4,12 @@ const TechnologiesPage = () => {
     return (
         <div className="page">
             <Head>
-                <title>Technologies - Mariano Murad</title>
+                <title>Tech Stack - Mariano Murad</title>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main>
-                <h1> Technologies</h1>
+                <h1 className="text-5xl my-16"> Tech Stack</h1>
+                
             </main>
         </div>
     );

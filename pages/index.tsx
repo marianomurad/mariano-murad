@@ -3,7 +3,6 @@ import Head from 'next/head'
 const app = () => {
   return(
   <>
-    <div style={{width: '100%'}}>
       <Head>
         <title>Mariano Murad</title>
         <link rel="icon" href="/favicon.ico"/>
@@ -34,7 +33,7 @@ const app = () => {
                 href="technologies"
                 className="card"
             >
-              <h3>Technologies &rarr;</h3>
+              <h3>Tech Stack &rarr;</h3>
               <p>Is this what you are looking for?</p>
             </a>
 
@@ -48,14 +47,17 @@ const app = () => {
               </p>
             </a>
           </div>
-          {/*<img src="./undraw_resume_1hqp.svg"/>*/}
+        </div>
+        <div className='flex flex-col items-center mt-16'>
+          <div className='flex'>
+          <img src="./undraw_resume_1hqp.svg" width={50} className="px-2" />
+          <p>Don't have time to go through the page?</p>
+          </div>
+          <a className='cursor-pointer underline hover:text-white hover:bg-black'>Download the PDF version!</a>
         </div>
       </main>
 
       <style jsx>{`
-
-    
-
         .title {
           margin: 0;
           line-height: 1.15;
@@ -123,7 +125,6 @@ const app = () => {
           }
         }
       `}</style>
-    </div>
   </>)
 }
 export default app;

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { InlineWidget } from "react-calendly";
 
 const ContactPage = () => {
     return (
@@ -8,7 +9,8 @@ const ContactPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main>
-                <h1> Contact</h1>
+                <h1 className="text-5xl my-16">Schedule a meeting!</h1>
+                <InlineWidget url="https://calendly.com/marianomurad21" styles={{height: '1000px'}}/>
             </main>
         </div>
     );
