@@ -1,24 +1,24 @@
-import Head from 'next/head'
+import Head from "next/head";
+import { Code } from "@chakra-ui/react";
+import { Kbd } from "@chakra-ui/react";
 
 const app = () => {
-  return(
-  <>
+  return (
+    <>
       <Head>
         <title>Mariano Murad</title>
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main style={{height: '80vh', width: '100%'}}>
-        <h1 className="title">
-          Mariano Murad
-        </h1>
+      <main style={{ minHeight: "80vh", width: "100%" }}>
+        <h1 className="title">Mariano Murad</h1>
 
-        <p className="description">
-          Personal <code>portfolio</code>
+        <p className="description mt-8">
+          <Kbd>Personal</Kbd> + <Kbd>portfolio</Kbd>
         </p>
 
-        <div style={{display: 'flex', flexDirection: 'row'}}>
-          <div className="grid">
+        <div className="flex justify-center h-auto">
+          <div className="flex items-center justify-center flex-wrap mt-3">
             <a href="experience" className="card">
               <h3>Experience &rarr;</h3>
               <p>Previous Jobs, Current, and Future Plans.</p>
@@ -29,31 +29,25 @@ const app = () => {
               <p>Get an insight on my life & interests.</p>
             </a>
 
-            <a
-                href="technologies"
-                className="card"
-            >
+            <a href="technologies" className="card">
               <h3>Tech Stack &rarr;</h3>
               <p>Is this what you are looking for?</p>
             </a>
 
-            <a
-                href="contact"
-                className="card"
-            >
+            <a href="contact" className="card">
               <h3>Contact &rarr;</h3>
-              <p>
-                Let's schedule a meeting.
-              </p>
+              <p>Let's schedule a meeting.</p>
             </a>
           </div>
         </div>
-        <div className='flex flex-col items-center mt-16'>
-          <div className='flex'>
-          <img src="./undraw_resume_1hqp.svg" width={50} className="px-2" />
-          <p>Don't have time to go through the page?</p>
+        <div className="flex flex-col items-center mt-16">
+          <div className="flex">
+            <img src="./undraw_resume_1hqp.svg" width={50} className="px-2" />
+            <p>Don't have time to go through the page?</p>
           </div>
-          <a className='cursor-pointer underline hover:text-white hover:bg-black'>Download the PDF version!</a>
+          <a className="cursor-pointer underline hover:text-white hover:bg-black">
+            Download the PDF version!
+          </a>
         </div>
       </main>
 
@@ -74,19 +68,12 @@ const app = () => {
           font-size: 1.5rem;
         }
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
         .card {
           margin: 1rem;
           flex-basis: 45%;
+          @media (min-width: 600px) {
+            flex-basis: 50%;
+          }
           padding: 1.5rem;
           text-align: left;
           color: inherit;
@@ -125,6 +112,7 @@ const app = () => {
           }
         }
       `}</style>
-  </>)
-}
+    </>
+  );
+};
 export default app;

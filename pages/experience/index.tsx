@@ -1,32 +1,67 @@
+import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Text,
+  Box,
+} from "@chakra-ui/react";
 import Head from "next/head";
+import { Heading } from "@chakra-ui/react";
 import { expList } from "../../app/utils/mockData";
+import ClientsCard from "../../app/components/ClientsCard";
 
 const ExperiencePage = () => {
-    return (
-        <div className="page">
-            <Head>
-                <title>Experience - Mariano Murad</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
-            <main>
-            <h1 style={{fontSize: 50}}> Experience</h1>
-            <ul style={{paddingLeft: 0}}>
-                {expList.map(item =>
-                    <li style={{listStyleType: 'none', margin: 20}} key={item.company}>
-                        <div style={{border: '1px solid #A9A9A9', marginBottom: 20, borderRadius: 10, padding: 10}}>
-                            <div style={{ borderBottom: '1px solid #A9A9A9', width: '100%'}}>
-                                <h1 style={{marginBottom: 5, marginTop: 0, fontSize: 25}}>{item.title}</h1>
-                                <h4 style={{color: '#A9A9A9', fontWeight: 300, margin: 0}}>{item.company}</h4>
-                                <p style={{color: '#888888', fontSize: 15, fontWeight: 200, marginTop: 5}}>{item.startDate} / {item.endDate}</p>
-                            </div>
-                            <p>{item.desc}</p>
-                        </div>
-                    </li>
-                )}
-                </ul>
-            </main>
-        </div>
-    );
+  return (
+    <div className="page">
+      <Head>
+        <title>Experience - Mariano Murad</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main>
+        <h1 className="flex justify-center text-3xl mt-4">Experience</h1>
+        <Accordion defaultIndex={[0]} allowToggle className="mt-4 border md:mx-32">
+          {expList.map(({ company, title, startDate, endDate, clients }) => (
+            <AccordionItem key={company}>
+              <h2>
+                <AccordionButton>
+                  <Box flex="1" textAlign="left">
+                    <Heading size="sm">{company}</Heading>
+                  </Box>
+                  <Box flex="1" textAlign="left">
+                    <Heading size="xs">{title}</Heading>
+                  </Box>
+                  <Heading size="xs" className="mr-2">
+                    Date:{" "}
+                  </Heading>
+                  {startDate} - {endDate}
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={10}>
+                {clients?.map(({ name, overview, dailyTasks, stack }) => (
+                  <ClientsCard>
+                    <Heading fontSize="xl" fontWeight="bold">
+                      {name}
+                    </Heading>
+                    <Text>{overview}</Text>
+                    <Text>{dailyTasks}</Text>
+                    <div className="mt-2">
+                      <Heading size="sm">Stack</Heading>
+                      {stack?.map((item) => {
+                        return <li key={item}>{item}</li>;
+                      })}
+                    </div>
+                  </ClientsCard>
+                ))}
+              </AccordionPanel>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </main>
+    </div>
+  );
 };
 
 export default ExperiencePage;
